@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/formstyle.css">
+    <title>Ticket list</title>
+</head>
+<body>
+<div>
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Reporter</th>
+            <th>Manufacturer</th>
+            <th>Serial number</th>
+            <th>Description</th>
+            <th>Date</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="notebookerror : ${errorList}">
+            <td th:text="${notebookerror.getId()}">x</td>
+            <td th:text="${notebookerror.getReporter()}">x</td>
+            <td th:text="${notebookerror.getManufacturer()}">x</td>
+            <td th:text="${notebookerror.getSerialnumber()}">x</td>
+            <td th:text="${notebookerror.getDescription()}">x</td>
+            <td th:text="${#dates.format(notebookerror.getDate(), 'yyyy-MM-dd')}">x</td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

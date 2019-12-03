@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/formstyle.css">
+    <title>Notebook Error Report</title>
+</head>
+<body>
+
+<h1>Main page</h1>
+
+<div>
+    <form action="/add" method='post' th:object="${ticketToAdd}">
+        <div>
+            <label for="reporter">Reporter</label><br>
+            <select id="reporter" th:field=" *{reporter}">
+                <option th:each="reporter: ${reporters}"
+                        th:value="${reporter.getName()}"
+                        th:text="${reporter.getName()}">someone
+                </option>
+            </select>
+        </div>
+        <br>
+        <label for="manufacturer">Manufacturer</label><br>
+        <input id="manufacturer" type="text" th:field="*{manufacturer}"><br>
+        <label for="serial">Serial Number</label><br>
+        <input id="serial" type="text" th:field="*{serialnumber}"><br>
+        <label for="description">Description</label><br>
+        <input id="description" type="text" th:field="*{description}"><br>
+        <button type="submit">Report</button>
+    </form>
+</div>
+</body>
+</html>

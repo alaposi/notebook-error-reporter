@@ -1,0 +1,5 @@
+admin admin1
+user1 xxxBESTPASSWORDxxx
+user2 asdasd
+user3 Vm45%#gas#
+user4 password
